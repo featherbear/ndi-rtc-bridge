@@ -6,17 +6,22 @@
   "scripts": {
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
-    "build": "npm-run-all clean transpile",
+    "build": "npm-run-all clean transpile && ncp ./src/static/ ./dist/static/",
     "clean": "rimraf build",
     "transpile": "sucrase ./src -d ./dist --transforms typescript,imports"
   },
   "author": "featherbear",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.17.1",
     "grandiose": "^0.0.4",
-    "open-easyrtc": "open-easyrtc/open-easyrtc"
+    "http": "^0.0.1-security",
+    "open-easyrtc": "open-easyrtc/open-easyrtc",
+    "socket.io": "^2.2.0"
   },
   "devDependencies": {
+    "@types/socket.io": "^2.1.12",
+    "ncp": "^2.0.0",
     "nodemon": "^2.0.6",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
