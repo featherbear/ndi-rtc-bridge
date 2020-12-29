@@ -1,0 +1,25 @@
+{
+  "name": "ndi-rtc-bridge",
+  "version": "1.0.0",
+  "description": "NDI to WebRTC Bridge",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "build": "npm-run-all clean transpile",
+    "clean": "rimraf build",
+    "transpile": "sucrase ./src -d ./dist --transforms typescript,imports"
+  },
+  "author": "featherbear",
+  "license": "MIT",
+  "dependencies": {
+    "grandiose": "^0.0.4",
+    "open-easyrtc": "open-easyrtc/open-easyrtc"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "sucrase": "^3.16.0"
+  }
+}
